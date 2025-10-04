@@ -13,7 +13,7 @@ void capture_output(const std::string& cmd, const std::string& outputFile) {
 
         std::string fullCmd = "cmd.exe /C \"" + cmdNormalized + "\" > \"" + outputFilePath.generic_string() + "\"";
     #else
-        std::string fullCmd = "sh -c '\"" + cmd + "\" > \"" + outputFilePath.string() + "\" 2>&1'";
+        std::string fullCmd = "sh -c '" + cmd + " > \"" + outputFilePath.string() + "\" 2>&1'";
     #endif
 
     int ret = std::system(fullCmd.c_str());
